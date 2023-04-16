@@ -1,6 +1,6 @@
 # Lab 2 - Installing the SaaS Accelerator
 
-👈 [Back to SaaS Offer labs](../index.md#labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)
 
 ⚠️ Completion of this lab is required for the following labs in the series to work properly.
 
@@ -118,4 +118,4 @@ Now you'll verify the two web application are up and running.
 
 **Congratulation!** You have finished this lab.
 
-👈 [Back to SaaS Offer labs](../index.md#labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)
