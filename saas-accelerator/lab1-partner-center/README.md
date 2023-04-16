@@ -1,6 +1,6 @@
 # Lab 1 - Creating a SaaS Offer in Partner Center
 
-👈 [Back to SaaS Offer labs](../index.md#labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)
 
 ⚠️ Completion of this lab is required for the following labs in the series to work properly.
 
@@ -178,4 +178,4 @@ In this short exercise, you will check your work by performing the first action 
 
 **Congratulation!** You have finished this lab.
 
-👈 [Back to SaaS Offer labs](../index.md#labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)

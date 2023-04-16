@@ -1,6 +1,6 @@
 # Lab 3 - Using the SaaS Accelerator
 
-👈 [Back to SaaS Offer labs](../index.md#labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)
 
 ⚠️ Completion of the previous labs in this course is required for this lab to work.
 
@@ -99,4 +99,4 @@ Here are some things you might try.
 
 **Congratulation!** You have finished this lab.
 
-👈 [Back to SaaS Offer labs](../index.md#labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)
