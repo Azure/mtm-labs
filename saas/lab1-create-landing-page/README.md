@@ -8,13 +8,12 @@
 
 ## Overview
 
-In this lab, you will build on what you accomplished in [Lab 1: Creating a SaaS Offer in Partner Center](../lab1-create-pc-offer/README.md). You will deploy a landing page and integrate it with your Partner Center SaaS Offer, enabling publishing of the offer and purchasing the offer in the **Preview** stage of the publication pipeline.
+In this lab, you will deploy a landing page and integrate it with your Partner Center SaaS Offer, enabling publishing of the offer and purchasing the offer in the **Preview** stage of the publication pipeline.
 
 ## Prerequisites
 
 For this lab, you will need the following.
 
-1. An offer configured in [Partner Center](https://partner.microsoft.com/en-us/dashboard) as per Lab 1
 1. An Azure account and access to the [Azure portal](https://portal.azure.com/)
 1. Visual Studio 2022 (any version)
 1. Git (optional)
@@ -25,13 +24,19 @@ For this lab, you will need the following.
 
 There are three projects in the solution you'll be working with. You will deal with them one at a time over the course of the labs. In this lab, we will start with the landing page project.
 
-1. Clone this repository or download a ZIP file of its contents and UNZIP them on your machine.
+1. You will need to clone this repository to complete the hands-on-labs. To clone, click the Code button found at the top of this page or click Clone here to download a zip to your local machine
 
-    https://github.com/microsoft/Mastering-the-Marketplace
+[![Button Clone]][Link] 
+
+
+[Button Clone]: https://img.shields.io/badge/Clone-37a779?style=for-the-badge&logoColor=white&logo=Docusign
+
+[Link]: https://github.com/Azure/mtm-tech-enablement-labs/archive/refs/heads/main.zip
+
 
 2. Using Visual Studio 2022, open the following solution file on your machine. Take care to choose the **begin** folder.
 
-    `**\Mastering-the-Marketplace\saas\labs\lab-code\begin\SaaSLabsBegin.sln`
+    `**\\saas\\lab-code\begin\SaaSLabsBegin.sln`
 
 3. Build the solution. You should get no build errors.
 
@@ -167,7 +172,7 @@ Click the **Save** button at the top of the screen.
 
 > **This is good!** You are seeing this message because you aren't coming to the landing page through the Azure portal and no marketplace purchase token is being passed. To finish your configuration, we need to configure Partner Center to be aware of the landing page.
 
-## Exercise: Update Your Offer in Partner Center and Publish It
+<!-- ## Exercise: Update Your Offer in Partner Center and Publish It
 
 Now that you have deployed your application, you can configure the **Technical configuration** section of Partner Center.
 
@@ -231,7 +236,7 @@ Once you can click the **Azure portal preview** link in Partner Center, do so. Y
 
 1. Click the **Configure account now** button. You are taken to the landing page where you can see details about the subscription you are buying. Note the marketplace purchase token in the query string.
 
----
+--- -->
 
 **Congratulation!** You have finished this lab.
 
