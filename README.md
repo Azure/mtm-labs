@@ -24,6 +24,11 @@ Once your zip is downloaded, you can extract it to a preferred location locally 
 
 <br>
 
+There are multiple labs in this repository. Refer the list below to find the lab of your choice.
+
+1. [SaaS Offers](./saas/README.md)
+1. [SaaS Accelerator](./saas-accelerator/README.md)
+
 <!-- As the maintainer of this project, please make a few updates:
 
 - Improving this README.MD file to provide a great experience
