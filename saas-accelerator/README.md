@@ -7,7 +7,5 @@ Your SaaS Offer can be deployed and published in just a few steps using the SaaS
 
 >Note: You will need to complete these labs in the order they are provided to ensure continuity
 
-1. [Preparing Partner Center](./lab1-partner-center/README.md)
-1. [Installing the Accelerator](./lab2-install/README.md)
-1. [Using the Accelerator](./lab3-tour/README.md)
-
+1. If you have completed Partner Center setup of the offer, follow [Path 1](./Path-1/README.md) 
+1. If you are creating your offer from scratch and don't have an offer on Partner center yet, follow [Path 2](./Path-2/README.md)

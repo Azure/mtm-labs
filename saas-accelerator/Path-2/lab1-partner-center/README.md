@@ -1,35 +1,31 @@
-# Lab 3 - Creating a SaaS Offer in Partner Center
+# Lab 1 - Creating a SaaS Offer in Partner Center
 
-👈 [Back to SaaS Offer labs](../README.md/#Labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)
 
 ⚠️ Completion of this lab is required for the following labs in the series to work properly.
 
-> 💀 The code in this lab is **NOT** meant to be used for production environments. It is a simple example with no error handling, no custom workflows, and is for learning purposes only.
-
 ## Overview
 
-In this lab, you will use your Partner Center account to create a **test** SaaS offer with a single plan. 
-
-This offer will be used for development and testing purposes throughout this lab series.
+In this lab you will use your Partner Center account to create a **test** SaaS offer with a single plan. This offer will be used for development and testing purposes. This lab will familiarize you with Partner Center and prepare an offer you will publish in the next lab.
 
 ## Prerequisites
 
 You will need the following to complete this lab.
 
 1. A [Partner Center](https://partner.microsoft.com/en-us/dashboard) account
-1. An Azure account and access to the [Azure portal](https://portal.azure.com/)
+2. An Azure account and access to the [Azure portal](https://portal.azure.com/)
 
 ## Exercise: Create a New SaaS Offer
 
 In this exercise, you will create a new SaaS offer in Partner Center and fill in the information needed to publish it.
 
-### Create a new SaaS offer
+### Create a new SaaS offer in Partner Center
 
 1. From the Home page of [Partner Center](https://partner.microsoft.com/dashboard/home) click the **Commercial Marketplace** button.
 1. Click the **+ New offer** button and at the dropdown and select **Software as a Service**.
 1. Give your new offer an **Offer ID** and **Offer alias**. Although you are free to use whatever values you like, we will be using the following in this lab for reference.
-    1. Offer ID: **saas-workshop**
-    1. Offer alias **SaaS Workshop**
+    1. Offer ID: **saas-accelerator**
+    1. Offer alias **SaaS Accelerator**
 
 ### Offer setup
 
@@ -44,8 +40,8 @@ Here, you will attach your offer to an Azure Data Storage table which will act a
 This is the first time you're using the Azure portal for this class. It is recommended that you install all the resources you'll create in this class into the same Resource Group, just to keep things tidy within your Azure subscription.
 
 1. Open a new tab for the [Azure portal](https://portal.azure.com) and log in.
-1. Create a Resource Group named **saas-workshop**. Although you may use a different name, all labs will refer to the Resource Group with this name.
-1. In the **saas-workshop** Resource Group, create a standard Azure Storage account. This will be your CRM database, so name it accordingly to distinguish it from future storage accounts that will be created in this Resource Group.
+1. Create a Resource Group named **saas-accelerator**. Although you may use a different name, all labs will refer to the Resource Group with this name.
+1. In the **saas-accelerator** Resource Group, create a standard Azure Storage account. This will be your CRM database, so name it accordingly to distinguish it from future storage accounts that will be created in this Resource Group.
 1. Once the storage account is created, browse to the storage account's overview page.
 1. In the left-hand menu, find the **Security + networking** section.
 1. In that section, find and click on the **Access keys** link.
@@ -99,28 +95,23 @@ You must select at least one category for your offer.
 1. In the **Support contact** section, enter your contact information.
 1. For the **Support link** field enter the support or homepage of your website.
 1. For the **Engineering contact** section, enter your contact information.
-1. for the **Supporting documents** section, upload the PDF document provided in the `items` directory of **lab1**. This document is named "**Well-Architected-Framework.pdf**."
+1. for the **Supporting documents** section, upload the PDF document provided in the `items` directory of **lab1**. This document is named "**WellArchitectedFramework.pdf**."
 1. You must give the document a name.
 1. For the Marketplace media section you'll upload 2 images.
-    1. For the **216X216 logo image,** upload the PNG provided in the `items` directory of **lab1**. This PNG is named "**Contoso-Logo-216x216.png**."
-    1. For the **1280X720** screenshot image, upload the PNG provided in the `items` directory of **lab1**. This PNG is named "**Screenshots-1280x720.png**."
+    1. For the **216X216 logo image,** upload the PNG provided in the `./items` directory of **lab1**. This PNG is named "**Contoso-Logo-216x216.png**."
+    1. For the **1280X720** screenshot image, upload the PNG provided in the `./items` directory of **lab1**. This PNG is named "**Screenshots-1280x720.png**."
     1. Add a title to the screenshot image.
 1. Click the **Save draft** button and correct any errors that be shown before moving on.
 
-### Availability
+### Preview audience
 
-1. In the **Availability** - **Preview audience** section, enter the email address you use for your Azure subscription. This is the email address you will use to purchase your offer later.
+1. In the **Preview audience** section, enter the email address you use for your Azure subscription. This is the email address you will use to purchase your offer later.
 1. Enter a **Description**.
 1. Click **Save draft**.
 
 ### Technical configuration
 
-In this section, we will reuse the pieces we created in the first 2 labs, ie, [Lab1](../lab1-create-landing-page/README.md) and [Lab2](../lab2-create-webhook/README.md)
-
-1. Fetch the Landing page URL created in Lab1 and insert it into the field marked **Landing Page URL**
-1. Enter the **Webhook URL** as created in Lab2
-1. Enter the **Azure Active Directory tenant ID** you've deployed your landing page to.
-1. For **Azure Active Directory application ID**, enter the **Application (client) ID** of the `saas-workshop-single-tenant` App registration.
+Skip this section for this first lab. You will come back to it in lab 2.
 
 ### Plan overview
 
@@ -139,11 +130,9 @@ In this exercise, you will create a plan that costs $0 to purchase. This plan wi
     1. **Plan name:** Gold Plan
 1. Click the **Create** button and your new plan is created.
 
-### Fill out the plan
-
 The Plan has several components to it, all of which must be completed.
 
-#### Plan Listing
+### Plan Listing
 
 1. The **Plan name** should read "Gold Plan."
 1. The summary requires text to describe the plan. In this case, you may use the following placeholder text if you would like.
@@ -151,8 +140,7 @@ The Plan has several components to it, all of which must be completed.
     > Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
 1. Click **Save draft**.
 
-
-#### Plan setup
+### Pricing and availability
 
 **For Markets:**
 
@@ -165,20 +153,11 @@ The Plan has several components to it, all of which must be completed.
 1. Keep it **Flat rate**.
 1. Leave **Billing term** as **Monthly**.
 1. Enter 0 for the cost per month.
-
-<!-- **For Marketplace Metering Service dimensions:**
-
-1. Click the  **Add a Custom Meter Dimension (Max 30)** link. This will create a new row. Enter the below values.
-1. Enter "persmsId" for "ID".
-1. Enter "SMS" for the "Display Name".
-1. Enter "per sms sent" for the "Unit of Measure".
-1. Enter "0" for the "Price per unit in USD" column.
-1. Enter "0" for the "Monthly quantity included in base" column. -->
 1. Leave the rest of the plan as is and click **Save draft**.
 
 ## Exercise: Resell through CSPs
 
-1. Open the lef-hand menu item.
+1. Open the left-hand menu item.
 1. Select "No partners in the CSP program."
 1. Click the **Save draft** button at the bottom of the screen.
 
@@ -188,56 +167,15 @@ In this short exercise, you will check your work by performing the first action 
 
 1. Open your offer's overview page.
 1. In the upper right corner of the page, click the link for **Review and publish**.
-1. The Status of all sections in your offer should be green.
-1. Click the **Publish** button at the bottom of the screen.
+1. Looking to the right side of the page, notice that some sections have a green circle and at least one is gray. The gray sections are not yet complete, preventing you from taking the next step of publishing your offer.
 
-You will be directed to the top of the Offer overview, where you may watch the publication process as it occurs. You must refresh the page to see status updates. You only want to publish as far as the **Publisher signoff** section. When the test links appear under that section, **DO NOT** press the **Go Live** button.
+    > The **Technical configuration** section of the offer will not pass review. This is okay for now as we need to fill out the **Technical configuration** tab and you can't do that until we have a landing page. All other sections should be green.
 
-![Offer overview](../images/02.png)
-
-You will need to hit refresh for awhile as your offer goes through the publish stages.
-
-## Publishing Time
-
-This section exists to let you know that it will take some time before your offer is finished publishing. This is the end of the lab for now as it will take some time for the offer to complete publishing to the **Publisher signoff** stage.
-
-To check your offers' publication status, go to the offer's **Overview** page. Look for links under the **Publisher signoff** section as shown below. Refresh the **Overview** page to get updates on your offer during the publication process.
-
-![Offer Overview](../images/01.png)
-
-> **Note:** If you are in a live workshop event, please raise your hand in Microsoft Teams to indicate you are done with the lab to this point. You will be coming back to finish the rest of Lab 2 later in the workshop.
-
-## Exercise: Buy Your Offer and Check Your Landing Page
-
-In Partner Center, after the offer is in **Publisher preview** stage, you may subscribe to it. After the initial purchase, you will then be routed to the landing page for the offer.
-
-## Subscribing to your offer
-
-Once the **Publisher signoff** section has links under it, still **DO NOT** press the **Go live** button. Instead, this state is where you will test the purchase and functionality of your SaaS application.
-
-Under the **Publisher signoff** section of the Offer overview page, click the **Azure portal preview** link.
-
-> If you receive the message, "Could not create the marketplace item" or a "404" message, wait another several minutes and try again. The offer is simply still being created. Preview creation can take up to 45 minutes in some cases.
-
-## Purchasing the SaaS offer
-
-Once you can click the **Azure portal preview** link in Partner Center, do so. You will see a form to fill out to purchase your SaaS Offer. Move on to the next section.
-
-**You are now acting in the role of the customer.**
-
-1. Click **Get it Now**. On the next screen  you can fill it out and subscribe to the subscription you are making.
-1. For the resource group, create a new one named `saas-workshop-purchases`.
-1. Give your SaaS offer a name. Consider `SaaSWorkshop01`.
-1. Click the **Review + subscribe** button at the bottom of the page.
-1. Click the **Subscribe** button at the bottom of the page.
-
-    > Your subscription is being provisioned. Once it is complete, you will see a **Configure account now** button on the screen.
-
-1. Click the **Configure account now** button. You are taken to the landing page where you can see details about the subscription you are buying. Note the marketplace purchase token in the query string.
-
+1. Go back to all sections that appear with a gray circle and complete those sections.
+1. Ensure all sections pass except **Technical configuration**, which will be addressed in the next lab.
 
 ---
 
 **Congratulation!** You have finished this lab.
 
-👈 [Back to SaaS Offer labs](../README.md/#labs)
+👈 [Back to SaaS Offer labs](../README.md#labs)

@@ -1,4 +1,4 @@
-# Lab 2 - Creating a Landing Page
+# Lab 1 - Creating a Landing Page
 
 👈 [Back to SaaS Offer labs](../README.md/#labs)
 
@@ -8,7 +8,7 @@
 
 ## Overview
 
-In this lab, you will deploy a landing page and integrate it with your Partner Center SaaS Offer, enabling publishing of the offer and purchasing the offer in the **Preview** stage of the publication pipeline.
+In this lab, you will deploy a landing page and eventually integrate it with your Partner Center SaaS Offer.
 
 ## Prerequisites
 
