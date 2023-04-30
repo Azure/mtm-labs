@@ -1,11 +1,4 @@
----
-hide:
-  - navigation
-search:
-    exclude: true
----
-
-# Lab 3 - Installing a Publisher Portal
+# Lab 4 - Installing a Publisher Portal
 
 👈 [Back to SaaS Offer labs](../README.md/#labs)
 
@@ -129,7 +122,6 @@ This exercise puts you back in the role of the publisher, and you will activate 
 1. Go back to the SaaS management screen and find your subscription. It likely still reads `Pending configuration`.
 1. This page caches the state of the subscriptions and updates every few minutes. Try refreshing the page occasionally until it reads `Subscribed`.
 
-**Congratulations!** You have finished this lab.
 
 If you are in a live class setting, please raise your hand in Microsoft Teams to indicate you are done with the lab.
 

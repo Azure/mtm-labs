@@ -1,11 +1,4 @@
----
-hide:
-  - navigation
-search:
-    exclude: true
----
-
-# Lab 4 - Deploying and Monitoring a Webhook
+# Lab 2 - Deploying and Monitoring a Webhook
 
 👈 [Back to SaaS Offer labs](../README.md/#labs)
 
@@ -15,7 +8,7 @@ search:
 
 ## Overview
 
-In this lab, you will build on what you accomplished in previous labs. You will create a SaaS offer webhook and integrate it with your Partner Center SaaS offer configuration, enabling your webhook to respond to subscription change events.
+In this lab, you will build on what you accomplished in previous labs. You will create a SaaS offer webhook and eventually integrate it with your Partner Center SaaS offer configuration, enabling your webhook to respond to subscription change events.
 
 The webhook in your Visual Studio solution is an Azure Function. There is no need to change the code in the webhook function at this time.
 
@@ -62,12 +55,12 @@ You need the webhook URI to add to your **Technical Configuration** in Partner C
 
 ## Exercise: Publishing the webhook in Partner Center
 
-Now you will re-publish your offer, this time with a valid webhook URL.
+Now you will populate your offer, with a valid webhook URL.
 
 1. In Partner Center, on the **Technical configuration** tab, find the **Connection webhook** field.
 1. Replace the previous value for the **Connection webhook** with the URL of the function application
 1. Click **Save Draft**.
-1. **Review and publish** your offer. It should pass validation (all sections are green) so you can publish.
+<!-- 1. **Review and publish** your offer. It should pass validation (all sections are green) so you can publish.
 1. Click the **Publish** button.
 
 > The offer must be in the Partner Center's preview stage for the final exercise of this lab to work. At no point should you click the **Go live** button.
@@ -128,7 +121,7 @@ You now have all the elements in place needed to manage a SaaS offer subscriptio
 1. **Cancel the subscription** from the **Subscribed** subscription through the SaaS management tool in the Azure portal.
 1. Watch the webhook function get called with the full payload of the unsubscribed event.
 
----
+--- -->
 
 **Congratulation!** You have finished this lab.
 

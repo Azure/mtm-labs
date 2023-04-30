@@ -1,11 +1,4 @@
----
-hide:
-  - navigation
-search:
-  exclude: true
----
-
-# Lab 1 - Creating a SaaS Offer in Partner Center
+# Lab 3 - Creating a SaaS Offer in Partner Center
 
 👈 [Back to SaaS Offer labs](../README.md/#Labs)
 
@@ -122,7 +115,12 @@ You must select at least one category for your offer.
 
 ### Technical configuration
 
-Skip this section for this first lab.
+In this section, we will reuse the pieces we created in the first 2 labs, ie, [Lab1](../lab1-create-landing-page/README.md) and [Lab2](../lab2-create-webhook/README.md)
+
+1. Fetch the Landing page URL created in Lab1 and insert it into the field marked **Landing Page URL**
+1. Enter the **Webhook URL** as created in Lab2
+1. Enter the **Azure Active Directory tenant ID** you've deployed your landing page to.
+1. For **Azure Active Directory application ID**, enter the **Application (client) ID** of the `saas-workshop-single-tenant` App registration.
 
 ### Plan overview
 
@@ -168,14 +166,14 @@ The Plan has several components to it, all of which must be completed.
 1. Leave **Billing term** as **Monthly**.
 1. Enter 0 for the cost per month.
 
-**For Marketplace Metering Service dimensions:**
+<!-- **For Marketplace Metering Service dimensions:**
 
 1. Click the  **Add a Custom Meter Dimension (Max 30)** link. This will create a new row. Enter the below values.
 1. Enter "persmsId" for "ID".
 1. Enter "SMS" for the "Display Name".
 1. Enter "per sms sent" for the "Unit of Measure".
 1. Enter "0" for the "Price per unit in USD" column.
-1. Enter "0" for the "Monthly quantity included in base" column.
+1. Enter "0" for the "Monthly quantity included in base" column. -->
 1. Leave the rest of the plan as is and click **Save draft**.
 
 ## Exercise: Resell through CSPs
@@ -190,12 +188,53 @@ In this short exercise, you will check your work by performing the first action 
 
 1. Open your offer's overview page.
 1. In the upper right corner of the page, click the link for **Review and publish**.
-1. Looking to the right side of the page, notice that some sections have a green circle and at least one is gray. The gray sections are not yet complete, preventing you from taking the next step of publishing your offer.
+1. The Status of all sections in your offer should be green.
+1. Click the **Publish** button at the bottom of the screen.
 
-    > The **Technical configuration** section of the offer will not pass review. This is okay for now as we need to fill out the **Technical configuration** tab and you can't do that until we have a landing page. All other sections should be green.
+You will be directed to the top of the Offer overview, where you may watch the publication process as it occurs. You must refresh the page to see status updates. You only want to publish as far as the **Publisher signoff** section. When the test links appear under that section, **DO NOT** press the **Go Live** button.
 
-1. Go back to all sections that appear with a gray circle and complete those sections.
-1. Ensure all sections pass except **Technical configuration**, which will be addressed in the next lab.
+![Offer overview](../images/02.png)
+
+You will need to hit refresh for awhile as your offer goes through the publish stages.
+
+## Publishing Time
+
+This section exists to let you know that it will take some time before your offer is finished publishing. This is the end of the lab for now as it will take some time for the offer to complete publishing to the **Publisher signoff** stage.
+
+To check your offers' publication status, go to the offer's **Overview** page. Look for links under the **Publisher signoff** section as shown below. Refresh the **Overview** page to get updates on your offer during the publication process.
+
+![Offer Overview](../images/01.png)
+
+> **Note:** If you are in a live workshop event, please raise your hand in Microsoft Teams to indicate you are done with the lab to this point. You will be coming back to finish the rest of Lab 2 later in the workshop.
+
+## Exercise: Buy Your Offer and Check Your Landing Page
+
+In Partner Center, after the offer is in **Publisher preview** stage, you may subscribe to it. After the initial purchase, you will then be routed to the landing page for the offer.
+
+## Subscribing to your offer
+
+Once the **Publisher signoff** section has links under it, still **DO NOT** press the **Go live** button. Instead, this state is where you will test the purchase and functionality of your SaaS application.
+
+Under the **Publisher signoff** section of the Offer overview page, click the **Azure portal preview** link.
+
+> If you receive the message, "Could not create the marketplace item" or a "404" message, wait another several minutes and try again. The offer is simply still being created. Preview creation can take up to 45 minutes in some cases.
+
+## Purchasing the SaaS offer
+
+Once you can click the **Azure portal preview** link in Partner Center, do so. You will see a form to fill out to purchase your SaaS Offer. Move on to the next section.
+
+**You are now acting in the role of the customer.**
+
+1. Click **Get it Now**. On the next screen  you can fill it out and subscribe to the subscription you are making.
+1. For the resource group, create a new one named `saas-workshop-purchases`.
+1. Give your SaaS offer a name. Consider `SaaSWorkshop01`.
+1. Click the **Review + subscribe** button at the bottom of the page.
+1. Click the **Subscribe** button at the bottom of the page.
+
+    > Your subscription is being provisioned. Once it is complete, you will see a **Configure account now** button on the screen.
+
+1. Click the **Configure account now** button. You are taken to the landing page where you can see details about the subscription you are buying. Note the marketplace purchase token in the query string.
+
 
 ---
 
