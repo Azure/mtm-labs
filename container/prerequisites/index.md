@@ -24,7 +24,7 @@ Once you have completed these prerequisites, go back to the [Container Offer lab
 
 ## Experience
 
-Although not necessary to make it through the labs, you will get more value with experience in the following topics. Again, knowledge of these topics is not required, but recommended. 
+Although not necessary to make it through the labs, you will get more value with experience in the following topics. Again, knowledge of these topics is not required, but recommended.
 
 1. Docker
 2. Helm
