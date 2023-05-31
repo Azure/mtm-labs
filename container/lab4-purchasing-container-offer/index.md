@@ -1,26 +1,8 @@
----
-# Page settings
-layout: default
-keywords: Azure Marketplace Container Offer Mastering the Marketplace
-comments: false
-
-# Micro navigation
-micro_nav: false
-
-title: Lab 4
-
-hide:
-- navigation
----
-
-[Home](../../../) > [Container Offers](../../) > [Labs](../../index.md#labs) 🧪
-
-# Lab 4 - Purchasing the Container Offer
+# Lab 4 - Purchasing the Container offer
 
 > **Note:** This lab is part of a series of labs for Mastering Container Offers Workshop. 
 
 This lab puts you in the role of a customer who will purchase the offer you have published. 
-
 
 <!-- no toc -->
 - [Purchase your Offer](#purchase-your-offer)
@@ -40,6 +22,7 @@ This lab puts you in the role of a customer who will purchase the offer you have
    ![](./images/azurevoteresources.png)
 
 ## Access Azure Vote Solution
+
 1. In **Azure Portal** Open your Cluster blade
    
    ![](./images/cluster.png)

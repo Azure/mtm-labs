@@ -1,20 +1,3 @@
----
-# Page settings
-layout: default
-keywords: Azure Marketplace Container Offer Mastering the Marketplace
-comments: false
-
-# Micro navigation
-micro_nav: false
-
-title: Lab 2
-
-hide:
-- navigation
----
-
-[Home](../../../) > [Container Offers](../../) > [Labs](../../index.md#labs) 🧪
-
 # Lab 2 - Create CNAB Bundle
 
 > **Note:** This lab is part of a series of labs for Mastering Container Offers Workshop. You must finish this lab before moving on to the next sections.

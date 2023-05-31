@@ -1,20 +1,3 @@
----
-# Page settings
-layout: default
-keywords: Azure Marketplace Container offer Mastering the Marketplace
-comments: false
-
-# Micro navigation
-micro_nav: false
-
-title: Lab 3
-
-hide:
-- navigation
----
-
-[Home](../../../) > [Container offers](../../) > [Labs](../../index.md#labs) 🧪
-
 # Lab 3 - Publishing the Container offer
 
 > **Note:** This lab is part of a series of labs for Mastering Container offers Workshop. You must finish this lab before moving on to the next sections.

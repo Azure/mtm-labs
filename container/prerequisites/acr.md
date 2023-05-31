@@ -1,22 +1,3 @@
----
-# Page settings
-layout: default
-keywords: Azure Marketplace Container Offer
-comments: false
-
-# Hero section
-description: This lab will walk you through setting up a Azure Kubernetes Cluster and Azure Container Registry. 
-
-# Micro navigation
-micro_nav: false
-
-hide:
-- navigation
-
----
-
-[Home](../../../) > [Container Offers](../../../container/index.md) > [Prerequisites](./index.md)
-
 # Azure Container Registry (ACR) Prerequisite
 
 <!-- no toc -->
@@ -48,18 +29,19 @@ This exercise walks through creating an Azure Container Registry (ACR) for use i
 
 ## Give the Marketplace access to your ACR
 
-The Azure Marketplace will host your CNAB in a Marketplace special ACR of its own. You must grant access to the Microsoft ACR by creating a special service principal in your tenant. 
+The Azure Marketplace will host your CNAB in a Marketplace special ACR of its own. You must grant access to the Microsoft ACR by creating a special service principal in your tenant. The Marketplace will use this service principal to pull your CNAB from your ACR.
 
-> 🗒️ To perform these steps you must have the [Azure CLI installed](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).
+> 🗒️ Use the Azure cloud shell in the Azure portal to get a command line on which to run the following commands. Open the cloud shell for PowerShell in the Azure portal by clicking the button indicated below.
+
+![Cloud Shell](./images/cloud-shell.png)
 
 1. Run the following commands to add the service principal.
 
-        az login
         az ad sp create --id 32597670-3e15-4def-8851-614ff48c1efa
 
     Note this ID for use in the following steps.
 
-2. Get the ID of your ACR.
+2. Still using the cloud shell, get the ID of your ACR.
 
         az acr show --name <ACR Server> --query "id" --output tsv
 
@@ -77,14 +59,12 @@ The Azure Marketplace will host your CNAB in a Marketplace special ACR of its ow
 
 4. The `Microsoft.PartnerCenterIngestion` resource provider must be registered on the same subscription used to create your Azure Container Registry. Use the following command to do the registration.
 
-        az provider register --namespace Microsoft.PartnerCenterIngestion --subscription <subscription-id> --wait
+        az provider register --namespace Microsoft.PartnerCenterIngestion --subscription <your-subscription-id> --wait
 
     Use the following command to monitor the progress of the provider registration to ensure it completes successfully.
 
-        az provider show -n Microsoft.PartnerCenterIngestion --subscription <subscription-id>
-
-
+        az provider show -n Microsoft.PartnerCenterIngestion --subscription <your-subscription-id>
 
 **Congratulations!** You now have an Azure Container Registry to use in the labs and perhaps eventually for your production offers.
 
-Go back to the [lab prerequisites](index.md) and follow on with remaining steps.
+Go back to the [lab prerequisites](./index.md) and follow on with remaining steps.
