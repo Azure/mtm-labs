@@ -1,6 +1,6 @@
 # Lab 1 - Prepare for Container Deployment
 
-This lab is part of a series of labs for Mastering Container Offers Workshop. You must finish this lab before moving on to the next sections.
+> This lab is part of a series of labs for Mastering Container Offers Workshop. You must finish this lab before moving on to the next sections.
 
 In this lab you will go from start to finish in getting your artifacts ready for publication of your container offer. You'll start by getting containers running locally and move to updating deployment files in preparation for publishing the entire solution to your ACR.
 

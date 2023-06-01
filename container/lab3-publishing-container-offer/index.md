@@ -2,11 +2,7 @@
 
 > **Note:** This lab is part of a series of labs for Mastering Container offers Workshop. You must finish this lab before moving on to the next sections.
 
-> [!IMPORTANT] 
->
-> In order to complete this lab, you must signup for public preview [here](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR0isU_qQJglCq3xE2-4gcIRUMFRIQk05Rk5WQlRPR05BVlhRQzNaMk9YOC4u)
-
-In this lab, you will create and publish a Container offer in Partner Center. This lab requires a Partner Center account.
+In this lab, you will create and publish a Container offer in Partner Center. This lab requires a Partner Center account. If you do not have Partner Center access, ask your Partner Center admin for an account with the **Developer** role.
 
 <!-- no toc -->
 - [Create a new Container offer](#create-a-new-container-offer)
@@ -19,7 +15,7 @@ In this lab, you will create and publish a Container offer in Partner Center. Th
 
 ## Create a new Container offer
 
-In this section you will be creating a brand new Container offer from scratch. This will be used for publishing the offer once the rest of your labs are complete.
+In this section you will be creating a brand new container offer from scratch. This will be used for publishing the offer once the rest of your labs are complete.
 
 1. On the homepage of Partner Center, look for the **Marketplace Offers** tile and click it. If you have disabled Workspaces, then it will be visible as Commercial Marketplace.
 2. Click the **+ New Offer** button and select **Azure Container** from the dropdown.

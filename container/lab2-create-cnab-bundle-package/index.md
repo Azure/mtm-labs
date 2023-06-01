@@ -29,7 +29,7 @@ Open terminal and run the following command to download Microsoft's CNAB builder
 
         docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/c/Users/david/projects/container-labs:/data --entrypoint "/bin/bash" mcr.microsoft.com/container-package-app:latest
 
-    The following is the command to run. Replace [path to container-labs] with your complete path from the root of your drive.
+    The following is a template for the command to run. Replace [path to container-labs] with your complete path from the root of your drive.
 
         docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v [path to container-labs]:/data --entrypoint "/bin/bash" mcr.microsoft.com/container-package-app:latest
 
@@ -72,13 +72,8 @@ Now that the CNAB bundle has been built, you'll ensure it is in place in your AC
 1. Log into Azure Portal
 2. Open your ACR resource
 3. Click on **Services > Repositories**
-4. You will see two repositories.
+4. You will see the repository.
       - `com.nonmicrosoft.azuretodoapptest`
-      - `com.nonmicrosoft.azuretodoapptest-installer`
-
-    > **About the `-installer` images**
-    >
-    > The CNAB bundle manifest for the `com.nonmicrosoft.azuretodoapptest` bundle refers to the `com.nonmicrosoft.azuretodoapptest-installer` image. Therefore, the `com.nonmicrosoft.azuretodoapptest-installer` image must be in the ACR and may not be deleted.
 
 5. Click on `com.nonmicrosoft.azuretodoapptest` bundle.
 6. Click the `1.0.0` tag to inspect **Artifact reference** and **manifest** for that CNAB bundle.

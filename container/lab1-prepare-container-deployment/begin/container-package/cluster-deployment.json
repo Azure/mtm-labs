@@ -62,7 +62,7 @@
     "resources": [
         {
             "type": "Microsoft.KubernetesConfiguration/extensions",
-            "apiVersion": "2022-04-02-preview",
+            "apiVersion": "2020-09-01-preview",
             "name": "[parameters('extensionResourceName')]",
             "properties": {
                 "extensionType": "[variables('clusterExtensionTypeName')]",
