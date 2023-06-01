@@ -1,8 +1,8 @@
 # Lab 1 - Prepare for Container Deployment
 
-> **Note:** This lab is part of a series of labs for Mastering Container Offers Workshop. You must finish this lab before moving on to the next sections.
+This lab is part of a series of labs for Mastering Container Offers Workshop. You must finish this lab before moving on to the next sections.
 
-This lab will take you from start to finish in getting your artifacts ready for publication of your Container Offer. You'll start by getting containers running locally and move to updating deployment files in preparation for publishing the entire solution to your ACR.
+In this lab you will go from start to finish in getting your artifacts ready for publication of your container offer. You'll start by getting containers running locally and move to updating deployment files in preparation for publishing the entire solution to your ACR.
 
 <!-- no toc -->
 - [Getting started](#getting-started)
@@ -35,14 +35,14 @@ Capture the following values as you will need them throughout the remainder of t
 
 ### ❗Your working folder
 
-This section is extrememly important for working easily through the labs.
+This section is extremely important for working easily through the labs.
 
-You will be working with one solution throughout all the labs. To make it easier to work with the solution, you will make a copy of the solution folder and move it to a location of your choice outside the Git repository folder that holds these labs.
+You will be working with one solution throughout all the labs. To make it easier to work with the solution, make a copy of the *begin* folder and move it to a location of your choice outside the Git repository folder that holds these labs.
 
 1. Copy the folder `<path to Git repo>/docs/container/lab1-prepare-container-deployment/begin`.
-2. Copy this folder to a location of your choice. `c:\projects\begin` for example.
+2. Paste this folder to a location of your choice. `c:\projects\begin` for example.
 3. Rename the `begin` folder to `container-labs`.
-4. From now on, the labs will refer to `container-labs` when referring to your working folder.
+   From now on, the labs will refer to `container-labs` when referring to your working folder.
 
 ## Prepare Solution Images
 
@@ -52,7 +52,9 @@ In this section, you will create a `DockerFile` for solution `Azure ToDo` and pu
 
         container-labs/code/Dockerfile
 
-2. Add the following code to the Dockerfile taking care not to delete the first line.
+2. Add the following code to the Dockerfile.
+
+        FROM node:18.12-alpine3.17
 
         # Create app directory
         WORKDIR /usr/src/app
@@ -72,18 +74,18 @@ In this section, you will create a `DockerFile` for solution `Azure ToDo` and pu
         # Command to start the application
         CMD [ "npm", "start" ]
 
-3. Ensure Docker Desktop is running. 
+3. Ensure Docker Desktop is running.
 4. Run the following commands to build the image.
 
-        cd `container-labs\code`
+        cd container-labs\code
         docker build -t <ACR Login Server Name>/todojs:v1 .
 
 5. The solution uses MongoDB for storage. You're going to run MongoDB in another container.
 
     Run the following commands to pull mongodb image locally and tag it.
 
-        docker pull mongo:latest 
-        docker tag mongo:latest <ACR Server name>/mongo:latest
+        docker pull bitnami/mongodb:latest
+        docker tag bitnami/mongodb:latest <ACR Server name>/mongo:latest
 
 6. If you enter the following command, you should see the two local images prefixed with your ACR name.
 
@@ -99,7 +101,7 @@ In this section we will run the solution locally with Docker.
 
 1. Start by running MongoDB locally. Specify an `admin username` and `password` of your choice for the mongoDB instance.
 
-        docker run -d --net todo-net -e MONGO_INITDB_ROOT_USERNAME:<admin username> -e MONGO_INITDB_ROOT_PASSWORD:<password> -p 27017:27017 --name mongotodo  mongo:latest
+        docker run -d --net todo-net -e MONGO_INITDB_ROOT_USERNAME:<admin username> -e MONGO_INITDB_ROOT_PASSWORD:<password> -p 27017:27017 --name mongotodo  bitnami/mongodb:latest
 
 1. Start the main AzureTodo web application container.
 
@@ -117,7 +119,7 @@ In this section we will run the solution locally with Docker.
 
 In this section we will publish or **push** the solution images to the ACR you created in prerequisites.
 
-1. Open a terminal window (WSL2 on Windows) and run the following commands to login into ACR server. 
+1. Open a terminal window (WSL2 on Windows) and run the following commands to login into ACR server.
 
         docker login <ACR Login Server Name> -u <ACR admin> -p <ACR password>
 
@@ -131,7 +133,7 @@ In this section we will publish or **push** the solution images to the ACR you c
 
     You can now see the images in your ACR.
 
-4. Open the [Azure portal](https://portal.azure.com) and browse to your ACR.
+4. In the [Azure portal](https://portal.azure.com) browse to your ACR.
 5. In the left menu, select **Services > Repositories**.
 6. You should see an a view like the following image.
 
@@ -146,30 +148,26 @@ In this section will explore the Helm Chart directory `AzureTodo`.
 > Helm is the package manager for Kubernetes. In other words, it is used to help you manage Kubernetes applications. Helm is the Kubernetes equivalent of `yum` or `apt`. Helm deploys charts, which you can think of as a packaged application.
 
 1. Open  `container-labs\container-package\AzureTodo\values.yaml` in your text editor.
-2. Update lines 10 & 14 with your ACR server name. For example `myacr.azureacr.io`.
-3. Locate the value of the `todojs:v1` digest and copy it.
+2. Update the two registry lines with your ACR server name. For example:
+
+        registry: myacr.azureacr.io
+
+3. Locate the value of the `todojs:v1` digest in the Azure portal and copy it.
 
     > **Image Digest**
     >
     > The image digest is the hash of the image index or image manifest JSON document.
-
-    Inspect the images you pushed to the ACR earlier. Open each repository in the ACR and see that individual versions of an image will have their own **Digest** value.
-
-    > **Get Digest from local image**
     >
-    > Run `docker inspect <myacr>.azureacr.io\todojs:v1` you can locate the disget value under **RepoDigests**
+    > Inspect the images you pushed to the ACR earlier. Open each repository in the ACR and see that individual versions of an image will have their own **Digest** value. Copy the digest value from the Azure portal.
 
-    >![](./images/digest.png)
-
-
-4. Paste the `todojs:v1` digest value onto line 8.
-5. Update line 12 with `mongo:latest` image digest.
+4. Paste the `todojs:v1` digest value onto line 7.
+5. Update line 11 with `mongo:latest` image digest.
 6. Under section `MongoDB Admin` Add the following key/value pairs.
 
         mongoDBAdmin: <enter admin name>
         mongoDBPassword: <enter password>
 
-7. Update line 30 with namespace from your choice i.e contoso
+7. Update the last line with namespace from your choice i.e contoso
 
 ## Update Deployments File
 
@@ -197,11 +195,13 @@ In this section will explore the Helm Chart directory `AzureTodo`.
 >
 > The createUIDefinition.json file is used to customize the customer's interface during the installation process. It allows for various controls to be shown on the screen to collect values needed to install the application.
 
-1. Open the following file in your editor. 
+1. Open the following file in your editor.
 
     `container-labs\container-package\createUIDefinition.json`
 
 2. Add the following JSON to the `elements` section.
+
+    This JSON introduces two controls that will collect the admin username and password for the MongoDB container that will be created upon installation.
 
         {
             "name": "mongoDBAdmin",
@@ -233,8 +233,6 @@ In this section will explore the Helm Chart directory `AzureTodo`.
             },
             "toolTip": "Password for MongoDB admin"
           },
-
-    This JSON introduces two controls that will collect the admin username and password for the MongoDB container that will be created upon installation.
 
 3. Go to the `outputs` section at the bottom of the file and and add the following JSON.
 
@@ -272,7 +270,7 @@ In this section will explore the Helm Chart directory `AzureTodo`.
 
 ### Inspect the ARM template
 
-Find the resource type `Microsoft.KubernetesConfiguration/extensions`. This is a Kubernetes cluster extension that builds on top of Help to produce an ARM-driven deployment experience.
+Find the resource type `Microsoft.KubernetesConfiguration/extensions`. This is a Kubernetes cluster extension that builds on top of Helm to produce an ARM-driven deployment experience.
 
 ## Update Manifest File
 
@@ -287,7 +285,7 @@ In this section you will update the **manifest.yaml** file.
     `container-labs\container-package\manifest.yaml`
 
 2. Go to `registryServer:` and add your ACR server name.
-3. Go to `namespace` and the same namespace you enter under helm value file.
+3. Go to `namespace` and the same namespace you entered under Helm `values.yaml` file.
 
 **Congratulations!** You have now finished this lab and your deployment files are ready for next steps.
 

@@ -2,7 +2,6 @@
 title: Azure ToDo App
 global:
   azure:
-    billingIdentifier: DONOTMODIFY
     images:
       frontend:
         digest: << ADD digest >>
@@ -28,12 +27,3 @@ replicaBackCount: 1
 
 ## Where it will be deployed
 nameSpace: << enter namespace i.e contoso >>
-
-
-
-
-
-
-
-
-
