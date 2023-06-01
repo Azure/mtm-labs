@@ -2,7 +2,6 @@
 title: Azure ToDo App
 global:
   azure:
-    billingIdentifier: DONOTMODIFY
     images:
       frontend:
         digest: sha256:6cf5d9916016353e217e036e9985660c27d62aa0c99ef3c71731f8e84084aa73
@@ -16,7 +15,7 @@ global:
 
 # MongoDB Admin
 mongoDBAdmin: admin
-mongoDBPassword: password21!!
+mongoDBPassword: password26
 
 # Service controls
 serviceType: LoadBalancer
@@ -31,4 +30,4 @@ replicaFrontCount: 1
 replicaBackCount: 1
 
 ## Where it will be deployed
-nameSpace: <<ADD namespace>>
+nameSpace: contoso

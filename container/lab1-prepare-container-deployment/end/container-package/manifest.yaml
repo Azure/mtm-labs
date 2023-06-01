@@ -16,6 +16,6 @@ uiDefinition: "./createUIDefinition.json"
 registryServer: "<<Your ACR>>.azurecr.io"
 extensionRegistrationParameters:
   defaultScope: "cluster"
-  namespace: "<<ADD namespace>>"
+  namespace: "contoso"
   
   
