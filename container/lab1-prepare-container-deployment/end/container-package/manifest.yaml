@@ -13,7 +13,7 @@ restrictions:
 helmChart: "./AzureTodo"
 clusterArmTemplate: "./cluster-deployment.json"
 uiDefinition: "./createUIDefinition.json"
-registryServer: "<<Your ACR>>.azurecr.io"
+registryServer: "fooacr.azurecr.io"
 extensionRegistrationParameters:
   defaultScope: "cluster"
   namespace: "contoso"
