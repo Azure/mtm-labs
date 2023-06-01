@@ -2,43 +2,17 @@
 
 # Mastering the Marketplace Labs
 
-This repo consists of Labs and Hands-on material for you to build your offers using videos and training material available to all under [Mastering the Marketplace](https://aka.ms/masteringthemarketplace) 
-
-
----
-
-
-
-## Cloning this Repository
-
-You will need to clone this repository to complete the hands-on-labs. To clone, click the Code button found at the top of this page or click Clone here to download a zip to your local machine
-
-[![Button Clone]][Link] 
-
-
-[Button Clone]: https://img.shields.io/badge/Clone-37a779?style=for-the-badge&logoColor=white&logo=Docusign
-
-[Link]: https://github.com/Azure/mtm-tech-enablement-labs/archive/refs/heads/main.zip
-
-Once your zip is downloaded, you can extract it to a preferred location locally and use all the artifacts within the folder to complete your offer listing. Note that the artifacts (logo, docs) have been created based on the latest requirements of size and dimension.
-
-<br>
+This repo consists of Labs and Hands-on material for you to build your offers using videos and training material available to all under [Mastering the Marketplace](https://aka.ms/masteringthemarketplace).
 
 There are multiple labs in this repository. Refer the list below to find the lab of your choice.
 
 1. [SaaS Offers](./saas/README.md)
 1. [SaaS Accelerator](./saas-accelerator/README.md)
+1. [Container offers for Kubernetes apps](./container/index.md)
 
-<!-- As the maintainer of this project, please make a few updates:
+## Contributing
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README -->
-
-### Contributing
-
->This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+> This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
