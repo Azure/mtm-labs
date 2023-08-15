@@ -14,13 +14,12 @@
                 "description": "The name of the extension."
             }
         },
-
         "location": {
             "type": "string",
             "metadata": {
                 "description": "location"
             }
-        },        
+        },
         "app-title": {
             "type": "string",
             "metadata": {
@@ -51,31 +50,19 @@
             "metadata": {
                 "description": "Enter NameSpace"
             }
-        },
-        "app-mongoDBAdmin": {
-            "type": "string",
-            "metadata": {
-                "description": "Enter Mongo DB admin username"
-            }
-        },
-        "app-mongoDBPassword": {
-            "type": "secureString",
-            "metadata": {
-                "description": "Enter Mongo DB password"
-            }
         }
     },
     "variables": {
-        "plan-name": "DONOTMODIFY",
-        "plan-publisher": "DONOTMODIFY",
-        "plan-offerID": "DONOTMODIFY",
-        "releaseTrain": "DONOTMODIFY",
-        "clusterExtensionTypeName": "DONOTMODIFY"
+        "plan-name": "plan-name",
+        "plan-publisher": "publisherid",
+        "plan-offerID": "offerid",
+        "releaseTrain": "Stable",
+        "clusterExtensionTypeName": "[concat(variables('plan-publisher'), '.' , variables('plan-offerID'), '-', variables('plan-name'))]"
     },
     "resources": [
         {
             "type": "Microsoft.KubernetesConfiguration/extensions",
-            "apiVersion": "2020-09-01-preview",
+            "apiVersion": "2022-11-01",
             "name": "[parameters('extensionResourceName')]",
             "properties": {
                 "extensionType": "[variables('clusterExtensionTypeName')]",

@@ -14,12 +14,13 @@
                 "description": "The name of the extension."
             }
         },
+
         "location": {
             "type": "string",
             "metadata": {
                 "description": "location"
             }
-        },
+        },        
         "app-title": {
             "type": "string",
             "metadata": {
@@ -50,19 +51,31 @@
             "metadata": {
                 "description": "Enter NameSpace"
             }
+        },
+        "app-mongoDBAdmin": {
+            "type": "string",
+            "metadata": {
+                "description": "Enter Mongo DB admin username"
+            }
+        },
+        "app-mongoDBPassword": {
+            "type": "secureString",
+            "metadata": {
+                "description": "Enter Mongo DB password"
+            }
         }
     },
     "variables": {
-        "plan-name": "plan-name",
-        "plan-publisher": "publisherid",
-        "plan-offerID": "offerid",
-        "releaseTrain": "Stable",
-        "clusterExtensionTypeName": "[concat(variables('plan-publisher'), '.' , variables('plan-offerID'), '-', variables('plan-name'))]"
+        "plan-name": "DONOTMODIFY",
+        "plan-publisher": "DONOTMODIFY",
+        "plan-offerID": "DONOTMODIFY",
+        "releaseTrain": "DONOTMODIFY",
+        "clusterExtensionTypeName": "DONOTMODIFY"
     },
     "resources": [
         {
             "type": "Microsoft.KubernetesConfiguration/extensions",
-            "apiVersion": "2020-09-01-preview",
+            "apiVersion": "2022-11-01",
             "name": "[parameters('extensionResourceName')]",
             "properties": {
                 "extensionType": "[variables('clusterExtensionTypeName')]",
@@ -72,10 +85,10 @@
                     "title": "[parameters('app-title')]",
                     "appFrontLabel": "[parameters('app-FrontAppName')]",
                     "replicaFrontCount": "[parameters('app-FrontAppReplica')]",
-                     "mongoDBAdmin": "[parameters('app-mongoDBAdmin')]",
-                     "mongoDBPassword": "[parameters('app-mongoDBPassword')]",
-                     "clusterDNS": "[parameters('app-clusterDNS')]",
-                     "nameSpace": "[parameters('app-NameSpace')]"
+                    "mongoDBAdmin": "[parameters('app-mongoDBAdmin')]",
+                    "mongoDBPassword": "[parameters('app-mongoDBPassword')]",
+                    "clusterDNS": "[parameters('app-clusterDNS')]",
+                    "nameSpace": "[parameters('app-NameSpace')]"
                 }
             },
             "plan": {
@@ -86,9 +99,7 @@
             "scope": "[concat('Microsoft.ContainerService/managedClusters/', parameters('clusterResourceName'))]"
         }
     ],
-    "outputs": {
-        
-      "location": {
+    "outputs": {     "location": {
         "type": "string",
         "value": "[parameters('location')]"
         }
