@@ -243,15 +243,15 @@ In this section will explore the Helm Chart directory `AzureTodo`.
 
 ## Update the ARM Template
 
-> **About the cluster deployment file**
+> **About the main deployment file**
 >
-> The `cluster-deployment.json` is an ARM template, used for deploying resources into Azure. This file receives the output of `createUIDefinition.json` as input parameters.
+> The `mainTemplate.json` is an ARM template, used for deploying resources into Azure. This file receives the output of `createUIDefinition.json` as input parameters.
 
 ### Update the ARM template
 
 1. Open the following file in your editor.
 
-    `container-labs\container-package\cluster-deployment.json`
+    `container-labs\container-package\mainTemplate.json`
 
 2. add the following parameters to the parameters section.
 
