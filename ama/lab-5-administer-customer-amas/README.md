@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-
----
-
 👈 [Back to Azure Managed Applications labs](../../index.md#labs)
 
 # Lab 5 - Administering Your Customer’s Managed Applications

@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-
----
-
 👈 [Back to Azure Managed Applications labs](../../index.md#labs)
 
 # Lab 2 - The Managed Application Deployment Package

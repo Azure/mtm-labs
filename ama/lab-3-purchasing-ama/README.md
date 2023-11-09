@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-
----
-
 👈 [Back to Azure Managed Applications labs](../../index.md#labs)
 
 # Lab 3 - Purchasing an Azure Managed Application

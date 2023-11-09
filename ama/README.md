@@ -1,4 +1,4 @@
-# Azure Managed Applications 
+# Managed Applications 
 ## Labs
 Your Azure Managed Application offer can be deployed and published with the resources in this lab
 

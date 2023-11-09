@@ -9,7 +9,7 @@ There are multiple labs in this repository. Refer the list below to find the lab
 1. [SaaS Offers](./saas/README.md)
 1. [SaaS Accelerator](./saas-accelerator/README.md)
 1. [Container offers for Kubernetes apps](./container/index.md)
-1. [Azure Managed Applications](./ama/README.md)
+1. [Managed Applications](./ama/README.md)
 
 ## Contributing
 
