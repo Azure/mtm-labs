@@ -97,7 +97,7 @@ All changes in this section occur under the `AzureAD` section of the `appsetting
 
 1. In the Landing Page project, open the `appsettings.json` file.
 1. In the Azure portal, click the **Azure Active Directory** button in the left-hand menu.
-1. On the overview page in the **Basic information** section, find the the **Primary domain** and use it to replace `DOMAIN_NAME` in `appsettings.json`.
+1. On the overview page in the **Basic information** section, find the **Primary domain** and use it to replace `DOMAIN_NAME` in `appsettings.json`.
 1. In the left-hand menu under the **Manage** menu, click the **App registrations** link.
 1. Click the `saas-workshop-multi-tenant` app registration.
 1. In the `appsetting.json` file, replace `CLIENT_ID` with the **Application (client) ID** from this screen.
