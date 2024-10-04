@@ -84,8 +84,8 @@ In this section, you will create a `DockerFile` for solution `Azure ToDo` and pu
 
     Run the following commands to pull mongodb image locally and tag it.
 
-        docker pull bitnami/mongodb:latest
-        docker tag bitnami/mongodb:latest <ACR Server name>/mongo:latest
+        docker pull bitnami/mongodb:7.0.12
+        docker tag bitnami/mongodb:7.0.12 <ACR Server name>/mongo:7.0.12
 
 6. If you enter the following command, you should see the two local images prefixed with your ACR name.
 
@@ -101,7 +101,7 @@ In this section we will run the solution locally with Docker.
 
 1. Start by running MongoDB locally. Specify an `admin username` and `password` of your choice for the mongoDB instance.
 
-        docker run -d --net todo-net -e MONGO_INITDB_ROOT_USERNAME:<admin username> -e MONGO_INITDB_ROOT_PASSWORD:<password> -p 27017:27017 --name mongotodo  bitnami/mongodb:latest
+        docker run -d --net todo-net -e MONGO_INITDB_ROOT_USERNAME:<admin username> -e MONGO_INITDB_ROOT_PASSWORD:<password> -p 27017:27017 --name mongotodo  bitnami/mongodb:7.0.12
 
 1. Start the main AzureTodo web application container.
 
@@ -129,7 +129,7 @@ In this section we will publish or **push** the solution images to the ACR you c
 
 3. Push the mongo image to your ACR.
 
-        docker push <ACR Server name>/mongo:latest
+        docker push <ACR Server name>/mongo:7.0.12
 
     You can now see the images in your ACR.
 
@@ -161,7 +161,7 @@ In this section will explore the Helm Chart directory `AzureTodo`.
     > Inspect the images you pushed to the ACR earlier. Open each repository in the ACR and see that individual versions of an image will have their own **Digest** value. Copy the digest value from the Azure portal.
 
 4. Paste the `todojs:v1` digest value onto line 7.
-5. Update line 11 with `mongo:latest` image digest.
+5. Update line 11 with `mongo:7.0.12` image digest.
 6. Under section `MongoDB Admin` Add the following key/value pairs.
 
         mongoDBAdmin: <enter admin name>
